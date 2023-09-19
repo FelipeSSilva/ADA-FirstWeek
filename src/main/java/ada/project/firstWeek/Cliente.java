@@ -2,6 +2,7 @@ package ada.project.firstWeek;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Stack;
 import java.util.UUID;
 
 public final class Cliente extends Usuario implements Idade {
@@ -10,6 +11,7 @@ public final class Cliente extends Usuario implements Idade {
     private String nome;
     private String email;
     private LocalDate dataNascimento;
+    private Stack<Postagem> pilhaDePostagem = new Stack<>();
 
     @Override
     public int getIdade() {
@@ -31,6 +33,7 @@ public final class Cliente extends Usuario implements Idade {
         this.dataNascimento = dataNascimento;
     }
 
+    public Stack<Postagem> getPilhaDePostagem(){ return this.pilhaDePostagem; }
 
     public UUID getUuid() {
         return uuid;
